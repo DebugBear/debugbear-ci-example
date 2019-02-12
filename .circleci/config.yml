@@ -18,7 +18,7 @@ jobs:
       - run:
           background: true
           command: ./node_modules/.bin/http-server build
-          
+
       - run: wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
       - run: unzip ngrok-stable-linux-amd64.zip
       - run: chmod +x ngrok
@@ -27,4 +27,4 @@ jobs:
           background: true
           # stdout of this: https://github.com/inconshreveable/ngrok/issues/57
           command: ./ngrok http 8080 -log=stdout
-      - run: sleep 60
+      - run: ./node_modules/.bin/debugbear --pageId=720 --ngrokWebPort=4040 --waitForResult --baseBranch=master
