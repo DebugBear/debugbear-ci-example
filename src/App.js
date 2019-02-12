@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import _ from "lodash"
+// Log so it's included in the bundle
+console.log(_)
 
 class App extends Component {
   render() {
