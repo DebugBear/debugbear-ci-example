@@ -27,4 +27,4 @@ jobs:
           background: true
           # stdout of this: https://github.com/inconshreveable/ngrok/issues/57
           command: ./ngrok http 8080 -log=stdout
-      - run: ./node_modules/.bin/debugbear --pageId=740 --ngrokWebPort=4040 --waitForResult --baseBranch=master
+      - run: ./node_modules/.bin/debugbear --pageId=740 --ngrokWebPort=4040 --waitForResult --baseBranch=master --inferBuildInfo
