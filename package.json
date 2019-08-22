@@ -23,7 +23,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "debugbear": "^0.1.5",
+    "debugbear": "^0.1.8",
     "http-server": "^0.11.1"
   }
 }
