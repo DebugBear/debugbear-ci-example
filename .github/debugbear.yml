@@ -1,0 +1,38 @@
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Run Debugbear
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "10"
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - run: yarn install
+      - run: yarn build
+      - run:
+          background: true
+          command: ./node_modules/.bin/http-server build
+
+      - run: wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+      - run: unzip ngrok-stable-linux-amd64.zip
+      - run: chmod +x ngrok
+      - run: ./ngrok authtoken ${NGROK_TOKEN}
+      - run:
+          background: true
+          # stdout of this: https://github.com/inconshreveable/ngrok/issues/57
+          command: ./ngrok http 8080 -log=stdout
+      - run: ./node_modules/.bin/debugbear --pageId=740 --ngrokWebPort=4040 --waitForResult --baseBranch=master --inferBuildInfo
