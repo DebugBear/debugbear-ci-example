@@ -890,6 +890,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.9.0.tgz#35fea17653490dab82e1d5e69731abfdbf13160d"
   integrity sha512-ry4DOrC+xenhQbzk1iIPzCZGhhPGEFv7ia7Iu6XXSLVluiJIe9FfG7Iu3mObH9mpxEXCWLCMU4JWbCCR9Oy1Zg==
 
+"@types/node@^10.12.21":
+  version "10.17.60"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.60.tgz#35f3d6213daed95da7f0f73e75bcc6980e90597b"
+  integrity sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==
+
 "@types/q@^1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
@@ -2872,11 +2877,12 @@ debug@^4.0.1, debug@^4.1.0:
   dependencies:
     ms "^2.1.1"
 
-debugbear@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/debugbear/-/debugbear-0.1.5.tgz#ff754a041934a1d2fd48bfccd2751bc14eeb69f5"
-  integrity sha512-N6kcavVe19WhyzBfGoCJupOw0sxOdoErRhSle9UIBldJmpGDY0+Vjioc0xsP+yCnQ1r3AdByA1YgWGueRyyTRw==
+debugbear@^0.1.8:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/debugbear/-/debugbear-0.1.12.tgz#6ed91baa429739022eaa440dd049085066d6db20"
+  integrity sha512-V8hwpaqOgVxc0TCaWvZAeVqKj6o+hDRwfAGdI+EFyc58gtE2A70Bo5qLVH7rmzQlBXZrXmuxsPtb8c04gR/zdQ==
   dependencies:
+    "@types/node" "^10.12.21"
     commander "^2.19.0"
     env-ci "^3.2.0"
     lodash "^4.17.11"
@@ -9266,9 +9272,9 @@ tmp@^0.0.33:
     os-tmpdir "~1.0.2"
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
-  integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
+  integrity sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
